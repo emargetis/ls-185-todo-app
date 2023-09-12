@@ -1,3 +1,4 @@
+const config = require("./lib/config");
 const express = require("express");
 const morgan = require("morgan");
 const flash = require("express-flash");
@@ -9,8 +10,8 @@ const store = require("connect-loki");
 //const SessionPersistence = require("./lib/session-persistence");
 
 const app = express();
-const host = "localhost";
-const port = 8081;
+const host = config.HOST;
+const port = config.PORT;
 const LokiStore = store(session);
 
 app.set("views", "./views");
